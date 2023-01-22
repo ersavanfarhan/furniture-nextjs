@@ -1,0 +1,171 @@
+{
+  "new-product": [
+    {
+      "id": 1,
+      "name": "Spring Bed",
+      "price": 550000,
+      "image": "new-bed.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Leisure Armchair",
+      "price": 79000,
+      "image": "new-chair.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Pillow Mini",
+      "price": 57000,
+      "image": "new-pillow.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Roll Table",
+      "price": 310000,
+      "image": "new-roll.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Living Sofa",
+      "price": 250000,
+      "image": "new-sofa.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Silver Chair",
+      "price": 175000,
+      "show": false,
+      "image": "product-chair.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jati Cupboard",
+      "price": 368000,
+      "image": "product-cupboard.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Portable Desk",
+      "price": 263000,
+      "image": "product-desk.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Set Dining",
+      "price": 3250000,
+      "image": "product-dinning.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Cooling Fridge",
+      "price": 1250000,
+      "image": "product-fridge.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Pot Planter",
+      "price": 34000,
+      "image": "product-pot.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Wooden Shelf",
+      "price": 325000,
+      "image": "product-shelf2.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Cotton Sofa",
+      "price": 533000,
+      "image": "product-sofa.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Ceramic Vas",
+      "price": 100000,
+      "image": "product-vas.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Comfy Sofa",
+      "price": 545000,
+      "image": "product-sofa2.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Hand Dryer",
+      "price": 245000,
+      "image": "product-dryer.jpeg"
+    },
+    {
+      "id": 12,
+      "name": "Gordyn",
+      "price": 98000,
+      "image": "product-gordyn.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Portable Lamp",
+      "price": 66000,
+      "image": "product-lamp.jpeg"
+    },
+    {
+      "id": 14,
+      "name": "Wall Mirror",
+      "price": 38000,
+      "image": "product-mirror.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Set Plate",
+      "price": 379000,
+      "image": "product-setplate.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Shelf Clothes",
+      "price": 134000,
+      "image": "product-shelfclothes.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Shelf Plate",
+      "price": 142000,
+      "image": "product-shelfplate.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Hot Tub",
+      "price": 475000,
+      "image": "product-tub.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Wastafel",
+      "price": 283000,
+      "image": "product-wastafel.jpg"
+    }
+  ],
+  "carts": [
+    {
+      "name": "Pot Planter",
+      "quantity": "1",
+      "note": "",
+      "image": "product-pot.jpeg",
+      "price": 34000,
+      "subtotal": 34000,
+      "id": 1
+    },
+    {
+      "name": "Portable Desk",
+      "quantity": "2",
+      "note": "",
+      "image": "product-desk.jpg",
+      "price": 263000,
+      "subtotal": 526000,
+      "id": 2
+    }
+  ]
+}
