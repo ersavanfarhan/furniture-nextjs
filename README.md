@@ -22,3 +22,6 @@ https://furniture-nextjs.vercel.app/
 
 ![Screenshot (212)-01](https://user-images.githubusercontent.com/113334783/213927723-5c55c3d1-0383-415e-9b8e-958567955e55.jpg)
 
+
+# For Development
+This project requires Node.js version 8.9 or above (v10+ recommended) axios, and tailwind for depedencies and plug in
