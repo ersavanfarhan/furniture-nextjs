@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { Button } from "react-bootstrap";
+import { ALL_PRODUCT } from "../utils/api";
 
 export function Products() {
   const [products, setProduct] = useState<any[]>([]);
@@ -9,12 +10,11 @@ export function Products() {
   const [full, setFull] = useState(false);
 
   useEffect(() => {
-    const getProduct = async () => {
-      const { data: res } = await axios.get("http://localhost:3004/products");
-      setProduct(res);
-    };
-    getProduct();
-  }, []);
+    axios(ALL_PRODUCT)
+        .then((response) => {
+          setProduct(response.data)
+        })
+}, [])
 
   const loadMore = () => {
     setHalf(false);
@@ -37,7 +37,7 @@ export function Products() {
             >
               <div className="w-full relative">
                 <img
-                  src={"../" + product.image}
+                  src={product.image}
                   className="w-full mb-2 rounded-2xl aspect-[4/3]"
                 />
                 <div id="color" className="flex gap-2 absolute bottom-5 left-3">
@@ -72,7 +72,7 @@ export function Products() {
           >
             <div className="w-full relative">
               <img
-                src={"../" + product.image}
+                src={product.image}
                 className="w-full mb-2 rounded-2xl aspect-[4/3]"
               />
               <div id="color" className="flex gap-2 absolute bottom-5 left-3">
@@ -82,11 +82,11 @@ export function Products() {
               </div>
             </div>
             <label className="text-sm lg:text-md xl:text-md font-black">
-              {product.name}
-            </label>
-            <label className="text-xs lg:text-sm xl:text-sm">
-              IDR {product.price}
-            </label>
+                {product.name}
+              </label>
+              <label className="text-xs lg:text-sm xl:text-sm">
+                $ {product.price}
+              </label>
           </Link>
         ))}
       </div>
@@ -99,7 +99,7 @@ export function Products() {
         <div>
           <HalfProduct />
           <Button variant="success" className="text-sm bg-green-600 rounded-3xl" onClick={loadMore}>
-            Load More Products
+            Load All Products
           </Button>
         </div>
       ) : null}

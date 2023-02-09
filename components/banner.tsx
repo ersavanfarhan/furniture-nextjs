@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 export default function Banner() {
   const autoScroll = () => {
-    document.getElementById("newest")!.scrollIntoView();
+    document.getElementById("browse")!.scrollIntoView();
   };
 
   return (

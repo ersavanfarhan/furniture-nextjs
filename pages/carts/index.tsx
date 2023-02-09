@@ -2,6 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
+import { CART_PRODUCT } from "../../utils/api";
 
 export default function Cart() {
   const [carts, setCart] = useState<any[]>([]);
@@ -9,8 +10,9 @@ export default function Cart() {
 
   useEffect(() => {
     const getCart = async () => {
-      await axios.get("http://localhost:3004/carts").then((response) => {
+      await axios.get(CART_PRODUCT).then((response) => {
         setCart(response.data);
+        // console.log(response.data.products);
       });
     };
     getCart();
@@ -35,13 +37,13 @@ export default function Cart() {
   });
 
   const getData = () => {
-    axios.get("http://localhost:3004/carts").then((response) => {
+    axios.get(CART_PRODUCT).then((response) => {
       setCart(response.data);
     });
   };
 
   const deleteCart = (id: any) => {
-    axios.delete("http://localhost:3004/carts/" + id).then(() => {
+    axios.delete(CART_PRODUCT + id).then(() => {
       getData();
     });
   };
@@ -83,10 +85,10 @@ export default function Cart() {
           key={cart.id}
           className="items flex justify-between mb-3 border-2 border-green-800 rounded-3xl"
         >
-          <div id="preview-info" className="flex gap-2">
+            <div id="preview-info" className="flex gap-2">
             <div>
               <img
-                src={"../" + cart.image}
+                src={cart.image}
                 className="w-36 aspect-[4/3] rounded-tl-3xl rounded-bl-3xl"
               />
             </div>

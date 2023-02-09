@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import swal from "sweetalert";
+import { CART_PRODUCT } from "../../utils/api";
 
 export default function Edit() {
   const router = useRouter();
-  const cartsID = router.query.cartsID;
+  const ID = router.query.cartsID;
   const [cart, setCart] = useState<{
     price: number;
     subtotal: number;
@@ -20,12 +21,13 @@ export default function Edit() {
   useEffect(() => {
     const getCart = async () => {
       const { data: res } = await axios.get(
-        "http://localhost:3004/carts/" + cartsID
+        CART_PRODUCT + ID
       );
       setCart(res);
     };
     getCart();
-  }, []);
+  }, [router.isReady]);
+  
 
   // Update Cart Function
   const [quantity, setQuantity] = useState<any>("");
@@ -43,7 +45,7 @@ export default function Edit() {
         subtotal: cart.price * quantity,
       };
       try {
-        await axios.put("http://localhost:3004/carts/" + cartsID, Update);
+        await axios.put(CART_PRODUCT + ID, Update);
         swal({
           title: "Success",
           text: "Your product has been updated",
@@ -67,7 +69,7 @@ export default function Edit() {
       </label>
       <div className="xs:grid sm:grid flex w-full gap-5 mt-3">
         <img
-          src={"../" + cart.image}
+          src={cart.image}
           className="xs:w-full sm:w-full w-1/2 rounded-2xl aspect-[4/3]"
         />
         <div id="info">

@@ -5,7 +5,7 @@ export default function Carousel() {
     <>
         <div
           id="carousel"
-          className="flex animate-carousel gap-3 pt-2"
+          className="w-full flex animate-carousel gap-3 pt-2"
         >
           <img src="../table.jpg" className="w-80 rounded-2xl" />
           <img src="../chair-furniture2.jpg" className="w-80 rounded-2xl" />

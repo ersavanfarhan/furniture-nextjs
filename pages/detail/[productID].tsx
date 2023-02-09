@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import swal from "sweetalert";
+import { ALL_PRODUCT, CART_PRODUCT } from "../../utils/api";
 
 export default function Detail() {
   const router = useRouter();
@@ -11,18 +12,18 @@ export default function Detail() {
     price: number;
     name: string;
     image: string;
-  }>({ price: 0, name: "", image: "", });
+    description: string;
+  }>({ price: 0, name: "", image: "", description: "" });
 
   useEffect(() => {
   const ID :any = router.query.productID;
   
-  const getDetail = async () => {
-    await axios.get("http://localhost:3004/products/" + ID).then((response) => {
-      setDetail(response.data);
-    });
-    };
-    getDetail();
-  }, []);
+  axios.get(ALL_PRODUCT + ID)
+        .then((response) => {
+          setDetail(response.data)
+          // console.log(response.data)
+        })
+  }, [router.isReady]);
 
   // Add To Cart Function
   const [quantity, setQuantity] = useState<any>('');
@@ -40,7 +41,7 @@ export default function Detail() {
         subtotal: detail.price*quantity,
       };
       try {
-        await axios.post("http://localhost:3004/carts", order);
+        await axios.post(CART_PRODUCT, order);
         swal({
           title: "Success",
           text: "Your product has been added",
@@ -63,7 +64,7 @@ export default function Detail() {
       </label>
       <div className="xs:grid sm:grid flex w-full gap-5 mt-3">
         <img
-          src={"../" + detail.image}
+          src={detail.image}
           className="xs:w-full sm:w-full w-1/2 rounded-2xl aspect-[4/3]"
         />
         <div id="info">
@@ -76,11 +77,7 @@ export default function Detail() {
 
           <div id="description" className="py-3">
             <label className="text-xl font-bold">Description</label>
-            <p className="text-justify italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sed
-              animi unde tempora in. Tempora quos vitae magni modi! Aliquam
-              illum sint unde doloribus repellendus nemo facilis eligendi omnis
-              culpa.
+            <p className="text-justify italic"> {detail.description}
             </p>
           </div>
 
