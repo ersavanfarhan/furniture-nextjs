@@ -25,31 +25,31 @@ export function Products() {
     return (
       <div
         id="items"
-        className="pb-3 grid grid-cols-4 gap-x-2 gap-y-5 xs:grid-cols-2 sm:grid-cols-3"
+        className="pb-3 grid grid-cols-4 gap-x-5 gap-y-5 xs:grid-cols-2 sm:grid-cols-3"
       >
         {products
           .filter((product, index) => index < 10)
           .map((product) => (
             <Link
-              href={"/detail/" + product.id}
-              className="w-full grid bg-green-200 text-center rounded-2xl"
-              key={product.id}
-            >
-              <div className="w-full relative">
-                <img
-                  src={product.image}
-                  className="w-full rounded-t-2xl aspect-[4/3]"
-                />
-              </div>
-              <div className="grid p-2">
-              <label className="text-sm lg:text-md xl:text-md font-black">
-                {product.name}
-              </label>
-              <label className="text-xs lg:text-sm xl:text-sm">
-                IDR {product.price}
-              </label>
-              </div>
-            </Link>
+          href={"/detail/" + product.id}
+          className="w-full grid bg-green-100 text-center rounded-2xl hover:shadow-md"
+          key={product.id}
+        >
+          <div className="w-full relative">
+            <img
+              src={product.image}
+              className="w-full rounded-t-2xl aspect-[4/3]"
+            />
+          </div>
+          <div className="grid p-2">
+          <label className="text-sm lg:text-md xl:text-md font-black">
+            {product.name}
+          </label>
+          <label className="text-xs lg:text-sm xl:text-sm">
+            IDR {product.price}
+          </label>
+          </div>
+        </Link>
           ))}
       </div>
     );
