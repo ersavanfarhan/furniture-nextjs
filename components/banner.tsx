@@ -9,7 +9,7 @@ export default function Banner() {
   return (
     <div className="xs:grid sm:grid flex p-2">
       <div id="banner-image" className="w-full md:hidden lg:hidden xl:hidden">
-        <img src="../Furniture store-amico 36AE54.png" className="w-full" />
+        <img src="../Furniture store-amico 36AE54.png" className="xs:w-64 w-full mx-auto" />
       </div>
       <div id="slogan" className="w-full text-justify">
         <div id="top-slogan" className="xs:text-center sm:text-center grid">

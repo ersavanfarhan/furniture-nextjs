@@ -24,34 +24,31 @@ export function Products() {
   const HalfProduct = () => {
     return (
       <div
-        id="browse1"
-        className="pb-3 grid grid-cols-5 gap-x-2 gap-y-5 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg"
+        id="items"
+        className="pb-3 grid grid-cols-4 gap-x-2 gap-y-5 xs:grid-cols-2 sm:grid-cols-3"
       >
         {products
           .filter((product, index) => index < 10)
           .map((product) => (
             <Link
               href={"/detail/" + product.id}
-              className="w-full grid p-2 text-center hover:scale-110 hover:transition"
+              className="w-full grid bg-green-200 text-center rounded-2xl"
               key={product.id}
             >
               <div className="w-full relative">
                 <img
                   src={product.image}
-                  className="w-full mb-2 rounded-2xl aspect-[4/3]"
+                  className="w-full rounded-t-2xl aspect-[4/3]"
                 />
-                <div id="color" className="flex gap-2 absolute bottom-5 left-3">
-                  <span className="w-3 h-3 bg-red-300 p-1 rounded-2xl shadow-md"></span>
-                  <span className="w-3 h-3 bg-yellow-300 p-1 rounded-2xl shadow-md"></span>
-                  <span className="w-3 h-3 bg-sky-300 p-1 rounded-2xl shadow-md"></span>
-                </div>
               </div>
+              <div className="grid p-2">
               <label className="text-sm lg:text-md xl:text-md font-black">
                 {product.name}
               </label>
               <label className="text-xs lg:text-sm xl:text-sm">
                 IDR {product.price}
               </label>
+              </div>
             </Link>
           ))}
       </div>
@@ -61,33 +58,30 @@ export function Products() {
   const FullProduct = () => {
     return (
       <div
-        id="browse1"
-        className="pb-3 grid grid-cols-5 gap-x-2 gap-y-5 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg"
+        id="items"
+        className="pb-3 grid grid-cols-4 gap-x-5 gap-y-5 xs:grid-cols-2 sm:grid-cols-3"
       >
         {products.map((product) => (
           <Link
-            href={"/detail/" + product.id}
-            className="w-full grid p-2 text-center hover:scale-110 hover:transition"
-            key={product.id}
-          >
-            <div className="w-full relative">
-              <img
-                src={product.image}
-                className="w-full mb-2 rounded-2xl aspect-[4/3]"
-              />
-              <div id="color" className="flex gap-2 absolute bottom-5 left-3">
-                <span className="w-3 h-3 bg-red-300 p-1 rounded-2xl shadow-md"></span>
-                <span className="w-3 h-3 bg-yellow-300 p-1 rounded-2xl shadow-md"></span>
-                <span className="w-3 h-3 bg-sky-300 p-1 rounded-2xl shadow-md"></span>
-              </div>
-            </div>
-            <label className="text-sm lg:text-md xl:text-md font-black">
-                {product.name}
-              </label>
-              <label className="text-xs lg:text-sm xl:text-sm">
-                $ {product.price}
-              </label>
-          </Link>
+          href={"/detail/" + product.id}
+          className="w-full grid bg-green-100 text-center rounded-2xl hover:shadow-md"
+          key={product.id}
+        >
+          <div className="w-full relative">
+            <img
+              src={product.image}
+              className="w-full rounded-t-2xl aspect-[4/3]"
+            />
+          </div>
+          <div className="grid p-2">
+          <label className="text-sm lg:text-md xl:text-md font-black">
+            {product.name}
+          </label>
+          <label className="text-xs lg:text-sm xl:text-sm">
+            IDR {product.price}
+          </label>
+          </div>
+        </Link>
         ))}
       </div>
     );

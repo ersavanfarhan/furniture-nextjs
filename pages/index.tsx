@@ -9,7 +9,7 @@ export default function Home() {
         <Banner />
       </div>
 
-      <div>
+      <div className="overflow-hidden">
         <Carousel />
       </div>
 

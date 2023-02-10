@@ -62,7 +62,7 @@ export default function Detail() {
       <label className="text-2xl lg:text-3xl xl:text-3xl font-black">
         Product Detail
       </label>
-      <div className="xs:grid sm:grid flex w-full gap-5 mt-3">
+      <div className="xs:grid sm:grid flex w-full gap-3 mt-3">
         <img
           src={detail.image}
           className="xs:w-full sm:w-full w-1/2 rounded-2xl aspect-[4/3]"

@@ -89,7 +89,7 @@ export default function Cart() {
             <div>
               <img
                 src={cart.image}
-                className="w-36 aspect-[4/3] rounded-tl-3xl rounded-bl-3xl"
+                className="w-36 aspect-[1/1] rounded-tl-3xl rounded-bl-3xl"
               />
             </div>
             <div className="grid py-2">
@@ -108,14 +108,14 @@ export default function Cart() {
             <Link
               href={"/carts/" + cart.id}
               id="edit"
-              className="xs:px-1 sm:px-1 md:px-4 lg:px-4 xl:px-4 flex items-center
+              className="xs:px-3 sm:px-3 md:px-4 lg:px-5 xl:px-5 flex items-center
               bg-sky-500 text-white"
             >
               <span className="material-symbols-outlined">edit</span>
             </Link>
             <div
               id="delete"
-              className="xs:px-1 sm:px-1 md:px-4 lg:px-4 xl:px-4 flex items-center
+              className="xs:px-3 sm:px-3 md:px-4 lg:px-5 xl:px-5 flex items-center
               bg-red-500 text-white rounded-tr-3xl rounded-br-3xl hover:cursor-pointer"
               onClick={() => deleteCart(cart.id)}
             >

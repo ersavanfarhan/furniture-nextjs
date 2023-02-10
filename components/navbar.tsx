@@ -7,7 +7,7 @@ export default function Navbar() {
         href="/"
         className="flex gap-1 text-black no-underline items-center"
       >
-        <label className="mb-0 font-bold xs:text-xs hover:cursor-pointer">FURNITURE</label>
+        <label className="font-bold xs:text-xs hover:cursor-pointer">FURNITURE</label>
         <img src="../next.svg" className="w-14 xs:w-10" />
       </Link>
       <div className="flex gap-5 font-thin text-black">
