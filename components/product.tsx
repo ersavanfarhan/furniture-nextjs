@@ -25,14 +25,14 @@ export function Products() {
     return (
       <div
         id="items"
-        className="pb-3 grid grid-cols-4 gap-x-5 gap-y-5 xs:grid-cols-2 sm:grid-cols-3"
+        className="pb-3 grid grid-cols-4 xs:grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-5 xs:gap-2"
       >
         {products
           .filter((product, index) => index < 10)
           .map((product) => (
             <Link
           href={"/detail/" + product.id}
-          className="w-full grid bg-green-100 text-center rounded-2xl hover:shadow-md"
+          className="w-full mb-3 grid bg-green-100 text-center rounded-2xl hover:shadow-md"
           key={product.id}
         >
           <div className="w-full relative">
@@ -59,12 +59,12 @@ export function Products() {
     return (
       <div
         id="items"
-        className="pb-3 grid grid-cols-4 gap-x-5 gap-y-5 xs:grid-cols-2 sm:grid-cols-3"
+        className="pb-3 grid grid-cols-4 xs:grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-5 xs:gap-2"
       >
         {products.map((product) => (
           <Link
           href={"/detail/" + product.id}
-          className="w-full grid bg-green-100 text-center rounded-2xl hover:shadow-md"
+          className="w-full mb-3 grid bg-green-100 text-center rounded-2xl hover:shadow-md"
           key={product.id}
         >
           <div className="w-full relative">
