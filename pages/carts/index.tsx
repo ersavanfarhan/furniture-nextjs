@@ -89,7 +89,7 @@ export default function Cart() {
             <div>
               <img
                 src={cart.image}
-                className="w-36 aspect-[1/1] rounded-tl-3xl rounded-bl-3xl"
+                className="xs:w-24 w-36 aspect-[1/1] rounded-tl-3xl rounded-bl-3xl"
               />
             </div>
             <div className="grid py-2">
