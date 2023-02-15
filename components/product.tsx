@@ -28,7 +28,7 @@ export function Products() {
         className="pb-3 grid grid-cols-4 xs:grid-cols-2 sm:grid-cols-3 gap-x-5 gap-y-5 xs:gap-2"
       >
         {products
-          .filter((product, index) => index < 10)
+          .filter((product, index) => index < 12)
           .map((product) => (
             <Link
           href={"/detail/" + product.id}
